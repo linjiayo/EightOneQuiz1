@@ -49,9 +49,11 @@ public class LoopFun
           for (int i = 0; i < word.length(); i++) {
               char c = word.charAt(i);
               if (Character.isLetter(c)) {
-                  char shiftC = (char) ((c > 'W' && c < 'a') ? (c - 26 + 3) :
-                                        (c > 'w') ? (c - 26 + 3) :
-                                                (c + 3));
+                  char shiftC = (char) ((c > 'W') && (c < 'a')
+                                        ? (c - 26 + 3)
+                                        : (c > 'w')
+                                        ? (c - 26 + 3)
+                                        : (c + 3));
                   res.append(shiftC);
               }
           }
