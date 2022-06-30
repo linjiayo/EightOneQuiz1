@@ -45,7 +45,7 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          StringBuilder res = new StringBuilder();
+          StringBuilder res = new StringBuilder(word.length());
           for (int i = 0; i < word.length(); i++) {
               char c = word.charAt(i);
               if (Character.isLetter(c)) {
@@ -55,6 +55,8 @@ public class LoopFun
                                         ? (c - 23)
                                         : (c + 3));
                   res.append(shiftC);
+              } else {
+                  res.append(c);
               }
           }
           return res.toString();
